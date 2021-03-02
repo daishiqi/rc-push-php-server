@@ -1,8 +1,8 @@
 <?php
 /**
- * 融云 server sdk
+ * keke push平台 server sdk
  */
-namespace RongCloud;
+namespace RcPushServer;
 
 use RongCloud\Lib\Chatroom\Chatroom;
 use RongCloud\Lib\Conversation\Conversation;
@@ -13,12 +13,12 @@ use RongCloud\Lib\User\User;
 use RongCloud\Lib\Push\Push;
 
 error_reporting(0);
-if (!defined('RONGCLOUOD_ROOT')) {
-    define('RONGCLOUOD_ROOT', dirname(__FILE__) . '/');
+if (!defined('KEKE_ROOT')) {
+    define('KEKE_ROOT', dirname(__FILE__) . '/');
     require('Autoloader.php');
 }
 
-class RongCloud
+class PushServer
 {
     /**x
      * 应用 appkey

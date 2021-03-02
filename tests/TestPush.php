@@ -2,17 +2,16 @@
 /**
  * 推送模块测试用例
  */
-require "./../RongCloud.php";
+require "./../PushServer.php";
 define("APPKEY", '');
 define("APPSECRET", '');
 
-use RongCloud\RongCloud;
+use RcPushServer\PushServer;
 use RongCloud\Lib\Utils;
 
-$RongSDK = new RongCloud(APPKEY,APPSECRET);
+$RongSDK = new PushServer(APPKEY,APPSECRET);
 
 function testPush($RongSDK){
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
 
     $Push = $RongSDK->getPush();
 

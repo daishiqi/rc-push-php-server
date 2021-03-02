@@ -6,10 +6,10 @@ require "./../RongCloud.php";
 define("APPKEY", '');
 define("APPSECRET", '');
 
-use RongCloud\RongCloud;
+use RcPushServer\PushServer;
 use RongCloud\Lib\Utils;
 
-$RongSDK = new RongCloud(APPKEY,APPSECRET);
+$RongSDK = new RcPushServer\PushServer(APPKEY,APPSECRET);
 
 function testUser($RongSDK){
     $portrait = "http://7xogjk.com1.z0.glb.clouddn.com/IuDkFprSQ1493563384017406982";

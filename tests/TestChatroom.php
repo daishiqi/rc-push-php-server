@@ -6,10 +6,11 @@ require "./../RongCloud.php";
 define("APPKEY", '');
 define('APPSECRET', '');
 
-use RongCloud\RongCloud;
+use RcPushServer\PushServer;
+
 use RongCloud\Lib\Utils;
 
-$RongSDK = new RongCloud(APPKEY, APPSECRET);
+$RongSDK = new PushServer(APPKEY, APPSECRET);
 
 function testChatroom($RongSDK) {
     $Chatroom = $RongSDK->getChatroom();
