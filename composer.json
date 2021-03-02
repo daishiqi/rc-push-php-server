@@ -1,0 +1,11 @@
+{
+    "name": "test/rc-push-php-server",
+    "description": "rc-push-php-server",
+    "authors": [
+        {
+            "name": "daishiqi",
+            "email": "shiqi_dai@163.com"
+        }
+    ],
+    "require": {}
+}
