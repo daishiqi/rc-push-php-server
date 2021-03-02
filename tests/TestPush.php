@@ -12,6 +12,8 @@ use RongCloud\Lib\Utils;
 $RongSDK = new PushServer(APPKEY,APPSECRET);
 
 function testPush($RongSDK){
+    $RongSDK = new PushServer(APPKEY,APPSECRET);
+
 
     $Push = $RongSDK->getPush();
 

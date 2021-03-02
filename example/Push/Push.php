@@ -4,10 +4,10 @@
  */
 
 
-require "./../../RongCloud.php";
+require "./../../PushServer.php";
 define("APPKEY", '');
 define("APPSECRET", '');
-use RongCloud\RongCloud;
+use RcPushServer\PushServer;
 use RongCloud\Lib\Utils;
 
 /**
@@ -15,7 +15,7 @@ use RongCloud\Lib\Utils;
  */
 function broadcast()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new PushServer(APPKEY,APPSECRET);
     $sensitive = [
         'platform'=> ['ios','android'],//目标操作系统
         'fromuserid'=>'mka091amn',//送人用户 Id
@@ -33,7 +33,7 @@ broadcast();
  */
 function push()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new PushServer(APPKEY,APPSECRET);
     $sensitive = [
         'platform'=> ['ios','android'],//目标操作系统
         'audience'=>['is_to_all'=>true],//推送条件，包括： tag、userid、is_to_all。

@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c9825d4-fac3-41ab-9042-7982f151a104" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/RongCloud.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RongCloud.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autoloader.php" beforeDir="false" afterPath="$PROJECT_DIR$/Autoloader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RongCloud.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestChatroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestChatroom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestConversation.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestConversation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestGroup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestHistoryMessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestHistoryMessage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestMessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestMessage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/Request.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/Push/Push.php" beforeDir="false" afterPath="$PROJECT_DIR$/example/Push/Push.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/TestPush.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestPush.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestSensitive.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestSensitive.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestUser.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +41,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614654592648</updated>
       <workItem from="1614654593947" duration="2348000" />
-      <workItem from="1614665198781" duration="654000" />
+      <workItem from="1614665198781" duration="4176000" />
     </task>
     <servers />
   </component>

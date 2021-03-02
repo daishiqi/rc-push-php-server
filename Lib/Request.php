@@ -4,18 +4,18 @@
  */
 namespace RongCloud\Lib;
 
-use RongCloud\RongCloud;
+use RcPushServer\PushServer;
 
 class Request
 {
     private $appKey="";
     private $appSecret="";
-    private $serverUrl = ['http://api-cn.ronghub.com/','http://api2-cn.ronghub.com/'];
+    private $serverUrl = ['http://www.push-server.com:8088/','http://www.push-server.com:8088/'];
     public function __construct(){
-        if(RongCloud::$appkey) $this->appKey = RongCloud::$appkey;
-        if(RongCloud::$appSecret) $this->appSecret = RongCloud::$appSecret;
-        if(RongCloud::$apiUrl) $this->serverUrl = RongCloud::$apiUrl;
-        else{RongCloud::$apiUrl = $this->serverUrl;}
+        if(PushServer::$appkey) $this->appKey = PushServer::$appkey;
+        if(PushServer::$appSecret) $this->appSecret = PushServer::$appSecret;
+        if(PushServer::$apiUrl) $this->serverUrl = PushServer::$apiUrl;
+        else{PushServer::$apiUrl = $this->serverUrl;}
         $this->serverUrl = $this->resetServerUrl();
     }
 
@@ -23,13 +23,13 @@ class Request
      * server url 多域名切换
      */
     private function resetServerUrl($nextUrl=""){
-        if(is_array(RongCloud::$apiUrl)){
-            $urlList = RongCloud::$apiUrl;
+        if(is_array(PushServer::$apiUrl)){
+            $urlList = PushServer::$apiUrl;
             sort($urlList);
-            RongCloud::$apiUrl = $urlList;
+            PushServer::$apiUrl = $urlList;
         }
-        if(is_array(RongCloud::$apiUrl) && count(RongCloud::$apiUrl)==1) return RongCloud::$apiUrl[0];
-        if(is_string(RongCloud::$apiUrl)) return RongCloud::$apiUrl;
+        if(is_array(PushServer::$apiUrl) && count(PushServer::$apiUrl)==1) return PushServer::$apiUrl[0];
+        if(is_string(PushServer::$apiUrl)) return PushServer::$apiUrl;
         $seesionId = "RongCloudServerSDKUrl";
         if (!session_id()) @session_start();
         $oldSessionId = session_id();
@@ -39,11 +39,11 @@ class Request
         session_start();
 
         if(!isset($_SESSION['curl'])){
-            $_SESSION['curl'] = RongCloud::$apiUrl[0];
+            $_SESSION['curl'] = PushServer::$apiUrl[0];
         }
         if($nextUrl) $_SESSION['curl'] = $nextUrl;
 
-        $currentUrl = isset($_SESSION['curl'])?$_SESSION['curl']:RongCloud::$apiUrl[0];
+        $currentUrl = isset($_SESSION['curl'])?$_SESSION['curl']:PushServer::$apiUrl[0];
         session_write_close();
         unset($_SESSION);
         //切换到原始 SESSION
@@ -58,7 +58,7 @@ class Request
      * @param string $url
      */
     private function getNextUrl($url=""){
-        $urlList = RongCloud::$apiUrl;
+        $urlList = PushServer::$apiUrl;
         if(is_array($urlList) && in_array($url,$urlList)){
             $currentKey = array_search($url, $urlList);
             $nextUrl = isset($urlList[$currentKey+1])?$urlList[$currentKey+1]:$urlList[0];
@@ -76,10 +76,10 @@ class Request
         $timeStamp = time();
         $sign = sha1($this->appSecret.$nonce.$timeStamp);
         return [
-            'RC-App-Key:'.$this->appKey,
-            'RC-Nonce:'.$nonce,
-            'RC-Timestamp:'.$timeStamp,
-            'RC-Signature:'.$sign,
+            'KEKE-App-Key:'.$this->appKey,
+            'KEKE-Nonce:'.$nonce,
+            'KEKE-Timestamp:'.$timeStamp,
+            'KEKE-Signature:'.$sign,
         ];
     }
 
@@ -263,7 +263,6 @@ class Request
             81 => 'CURLE_AGAIN',
             82 => 'CURLE_SSL_CRL_BADFILE',
             83 => 'CURLE_SSL_ISSUER_ERROR',
-            84 => 'CURLE_FTP_PRET_FAILED',
             84 => 'CURLE_FTP_PRET_FAILED',
             85 => 'CURLE_RTSP_CSEQ_ERROR',
             86 => 'CURLE_RTSP_SESSION_ERROR',
